@@ -1,0 +1,354 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+/*Estilo do Logo*/
+.logo {
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+    margin: 0px;
+    background-color: black;
+    color: white;
+}
+
+.logo-img {
+    padding: 10px 15px 10px 15px;
+    display: block;
+    width: 90px;
+}
+
+.logo-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilo do Menu*/
+.navmenu {
+    background-color: rgb(10, 102, 44);
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav-item {
+    margin: 0 15px;
+}
+
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: block;
+    
+}
+
+.menu-link:hover {
+    background-color: #1b5b25;
+    color: rgb(24, 187, 78);
+}
+
+/*Menu Amburguer*/
+.menu-toggle {
+    display: none;
+    background: none;
+    font-size: 24px;
+    color: white;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle:hover {
+    color: rgb(24, 187, 116);
+}
+
+.menu-toggle:focus {
+    outline: none;
+}
+
+nav-menu.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgb(10, 102, 44);
+        padding: 10px 0;
+        display: none;
+    }
+
+    .nav-item {
+        margin:10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Estilo da barra de pesquisa */
+.search {
+    background: #353b48;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 40px; /* Inicia com largura pequena */
+    transition: width 0.4s ease; /* Transição suave ao expandir/recolher */
+    overflow: hidden; /* Esconde a parte que não cabe */
+}
+
+.search-btn {
+    color: #fafafa;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2d322e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1; /* Garante que o botão esteja acima do campo de texto */
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    line-height: 40px;
+    width: 0;
+    opacity: 0; /* O campo de texto inicia invisível */
+    transition: opacity 0.4s ease, width 0.4s ease;
+}
+
+/* Quando o mouse está sobre a área da barra de pesquisa */
+.search:hover {
+    width: 240px;
+}
+
+.search:hover .search-txt {
+    width: 200px; /* Expande a largura do campo de texto */
+    opacity: 1; /* Torna o campo de texto visível */
+}
+
+.search:hover .search-btn {
+    background: rgb(190, 187, 187); /* Muda a cor de fundo do botão ao passar o mouse */
+}
+
+
+/*Estilo dos cards*/
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cards {
+    background-color: #1b5b25;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 black;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cards h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.cards p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #171616;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cards img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.card button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+}
+
+.cards:hover {
+    background-color: #2c6b2f;
+    box-shadow: 0 8px 16px 0 black;
+    transform: scale(1.05);
+}
+
+/*Estilo da linha horizontal*/
+.separador {
+    border: 0;
+    height: 1px;
+    background-color: #1b5b25;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/*Estilo Lista de Produtos*/
+.product-list {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.product-itens {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px black;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-details h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.product-details p {
+    font-size: 16px;
+    color: #333;
+}
+
+
+.product-itens:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 6px 12px black;
+}
+
+/*Estilo do footer*/
+.rodape {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-transform: uppercase;
+    box-shadow: 0 -2px 5px rgb(15, 14, 14);
+}
+
+
+.navfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(10, 102, 44);
+    padding: 15px;
+    width: 100%;
+}
+
+.nav-menu1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.footer-link:hover {
+    background-color: #1b5b25;
+    color: rgb(24, 187, 116);
+}
+
+main, .product-list {
+    margin-bottom: 60px;
+}
